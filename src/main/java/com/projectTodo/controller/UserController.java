@@ -5,6 +5,7 @@ import com.projectTodo.utils.ResultGenerator;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import springfox.documentation.annotations.ApiIgnore;
 
 /**
  * @author Yan liang
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/User")
+@ApiIgnore
 public class UserController {
 
     @PostMapping("/add")

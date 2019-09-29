@@ -19,12 +19,13 @@ public class WebMvcConfig implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        String[] excludePathPatterns = new String[]{"/User/**","/swagger-ui.html","/swagger-resources/**", "/v2/api-docs/**", "/webjars/**"};
+        String[] excludePathPatterns = new String[]{"/User/**","/swagger-ui.html","/swagger-resources/**", "/v2/api-docs/**", "/webjars/**", "/error"};
         // 添加一个拦截器
         registry.addInterceptor(sessionInterceptor).addPathPatterns("/**").excludePathPatterns(excludePathPatterns);
     }
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
+//        registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/webjars/**");
     }
 }

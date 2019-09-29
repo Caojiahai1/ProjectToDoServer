@@ -3,12 +3,11 @@ package com.projectTodo.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
+import springfox.documentation.builders.ParameterBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
-import springfox.documentation.service.ApiInfo;
-import springfox.documentation.service.ApiKey;
-import springfox.documentation.service.AuthorizationScope;
-import springfox.documentation.service.SecurityReference;
+import springfox.documentation.schema.ModelRef;
+import springfox.documentation.service.*;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spi.service.contexts.SecurityContext;
 import springfox.documentation.spring.web.plugins.Docket;
@@ -28,12 +27,20 @@ public class Swagger2Config {
 
     @Bean
     public Docket createRestApi() {
+        ParameterBuilder ticketPar = new ParameterBuilder();
+        List<Parameter> pars = new ArrayList<Parameter>();
+        ticketPar.name("userInfo").description("验证用户信息")
+                .modelRef(new ModelRef("string")).parameterType("header") //传用户信息到头参数，权限验证
+                .required(false).build(); //header中的ticket参数非必填，传空也可以
+        pars.add(ticketPar.build());
+
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.projectTodo.controller"))
                 .paths(PathSelectors.any())
                 .build()
+                .globalOperationParameters(pars)
 //                .securitySchemes(securitySchemes())
                 .securityContexts(securityContexts());
     }

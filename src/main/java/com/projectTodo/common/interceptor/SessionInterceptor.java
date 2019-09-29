@@ -17,10 +17,11 @@ public class SessionInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 //        String uri = request.getRequestURI();
-        String header = request.getHeader("Cookie");
-        if (header == null) {
+        String userInfo = request.getHeader("userInfo");
+        if (userInfo == null) {
             response.setCharacterEncoding("utf-8");
 //            response.setContentType("application/json");
+            response.setStatus(500);
             response.getOutputStream().write("用户未注册".getBytes());
             response.getOutputStream().flush();
             return false;
