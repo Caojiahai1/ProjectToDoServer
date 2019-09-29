@@ -38,6 +38,7 @@ public class UserServiceImpl implements UserService {
             userId = user.getId();
         }
         // 插入上线日志
+
         UserLoginLog userLoginLog = new UserLoginLog();
         userLoginLog.setUserId(userId);
         userLoginLog.setLoginIp("");

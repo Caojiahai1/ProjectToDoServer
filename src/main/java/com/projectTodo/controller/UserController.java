@@ -27,7 +27,7 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/onLine")
-    @ApiOperation(value = "用户上线(用户不存在，会新增用户，并记录上线日志)")
+    @ApiOperation(value = "用户上线(用户不存在，会新增用户，记录上线日志)")
     public Result userOnline(@RequestBody User user) {
         return userService.userOnline(user);
     }
