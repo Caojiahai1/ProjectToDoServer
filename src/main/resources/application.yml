@@ -3,6 +3,8 @@ server:
 spring:
   banner:
     location: classpath:banner/banner.txt
+  jackson:
+      date-format: yyyy-MM-dd HH:mm:ss
   datasource:
       name: datasource
       driver-class-name: com.mysql.cj.jdbc.Driver

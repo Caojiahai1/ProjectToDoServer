@@ -1,6 +1,6 @@
 package com.projectTodo.config;
 
-import com.projectTodo.common.interceptor.SessionInterceptor;
+import com.projectTodo.common.interceptor.UserInfoInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -15,13 +15,13 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
     @Autowired
-    private SessionInterceptor sessionInterceptor;
+    private UserInfoInterceptor userInfoInterceptor;
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         String[] excludePathPatterns = new String[]{"/User/**","/swagger-ui.html","/swagger-resources/**", "/v2/api-docs/**", "/webjars/**", "/error"};
         // 添加一个拦截器
-        registry.addInterceptor(sessionInterceptor).addPathPatterns("/**").excludePathPatterns(excludePathPatterns);
+        registry.addInterceptor(userInfoInterceptor).addPathPatterns("/**").excludePathPatterns(excludePathPatterns);
     }
 
     @Override

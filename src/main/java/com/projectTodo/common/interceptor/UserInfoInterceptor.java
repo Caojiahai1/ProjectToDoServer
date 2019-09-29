@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
  * @since 1.0.0
  */
 @Component
-public class SessionInterceptor implements HandlerInterceptor {
+public class UserInfoInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {

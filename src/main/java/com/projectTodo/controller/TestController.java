@@ -7,6 +7,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Date;
+
 /**
  * @author Yan liang
  * @create 2019/9/29
@@ -19,6 +21,7 @@ public class TestController {
     @GetMapping("test")
     public Result test() {
         logger.error("test");
-        return ResultGenerator.success();
+        int a = 1/0;
+        return ResultGenerator.success(new Date());
     }
 }
