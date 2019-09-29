@@ -1,7 +1,7 @@
-package com.projectTodo.service;
+package com.ProjectTodo.service;
 
-import com.projectTodo.entry.User;
-import com.projectTodo.utils.Result;
+import com.ProjectTodo.entry.User;
+import com.ProjectTodo.utils.Result;
 
 /**
  * @author Yan liang

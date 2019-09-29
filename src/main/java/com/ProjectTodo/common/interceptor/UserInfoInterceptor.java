@@ -1,4 +1,4 @@
-package com.projectTodo.common.interceptor;
+package com.ProjectTodo.common.interceptor;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;

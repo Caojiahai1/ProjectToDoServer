@@ -1,7 +1,7 @@
-package com.projectTodo.controller;
+package com.ProjectTodo.controller;
 
-import com.projectTodo.utils.Result;
-import com.projectTodo.utils.ResultGenerator;
+import com.ProjectTodo.utils.Result;
+import com.ProjectTodo.utils.ResultGenerator;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;

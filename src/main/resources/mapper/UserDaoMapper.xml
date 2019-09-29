@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.projectTodo.dao.UserDao">
-    <resultMap id="userResultMap" type="com.projectTodo.entry.User">
+<mapper namespace="com.ProjectTodo.dao.UserDao">
+    <resultMap id="userResultMap" type="com.ProjectTodo.entry.User">
         <id column="id" jdbcType="INTEGER" property="id"></id>
         <result column="nickName" jdbcType="VARCHAR" property="nickName"></result>
         <result column="gender" jdbcType="INTEGER" property="gender"></result>
@@ -12,7 +12,7 @@
         <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
     </resultMap>
 
-    <insert id="Insert" keyProperty="id" useGeneratedKeys="true" parameterType="com.projectTodo.entry.User">
+    <insert id="Insert" keyProperty="id" useGeneratedKeys="true" parameterType="com.ProjectTodo.entry.User">
       INSERT INTO user(
         nickName, gender, province, city, country, signature, create_time
       ) VALUES (

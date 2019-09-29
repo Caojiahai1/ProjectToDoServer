@@ -1,6 +1,6 @@
-package com.projectTodo.config;
+package com.ProjectTodo.config;
 
-import com.projectTodo.common.interceptor.UserInfoInterceptor;
+import com.ProjectTodo.common.interceptor.UserInfoInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -14,6 +14,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  */
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
+
     @Autowired
     private UserInfoInterceptor userInfoInterceptor;
 

@@ -1,12 +1,12 @@
-package com.projectTodo.service.impl;
+package com.ProjectTodo.service.impl;
 
-import com.projectTodo.dao.UserDao;
-import com.projectTodo.dao.UserLoginLogDao;
-import com.projectTodo.entry.User;
-import com.projectTodo.entry.UserLoginLog;
-import com.projectTodo.service.UserService;
-import com.projectTodo.utils.Result;
-import com.projectTodo.utils.ResultGenerator;
+import com.ProjectTodo.dao.UserDao;
+import com.ProjectTodo.dao.UserLoginLogDao;
+import com.ProjectTodo.entry.User;
+import com.ProjectTodo.entry.UserLoginLog;
+import com.ProjectTodo.service.UserService;
+import com.ProjectTodo.utils.Result;
+import com.ProjectTodo.utils.ResultGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

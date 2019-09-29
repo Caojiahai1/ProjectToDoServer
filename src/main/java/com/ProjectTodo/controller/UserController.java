@@ -1,8 +1,8 @@
-package com.projectTodo.controller;
+package com.ProjectTodo.controller;
 
-import com.projectTodo.entry.User;
-import com.projectTodo.service.UserService;
-import com.projectTodo.utils.Result;
+import com.ProjectTodo.entry.User;
+import com.ProjectTodo.service.UserService;
+import com.ProjectTodo.utils.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import springfox.documentation.annotations.ApiIgnore;
 
 /**
  * @author Yan liang

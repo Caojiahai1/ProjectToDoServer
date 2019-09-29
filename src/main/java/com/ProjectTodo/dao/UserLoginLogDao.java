@@ -1,6 +1,6 @@
-package com.projectTodo.dao;
+package com.ProjectTodo.dao;
 
-import com.projectTodo.entry.UserLoginLog;
+import com.ProjectTodo.entry.UserLoginLog;
 
 /**
  * @author Yan liang
