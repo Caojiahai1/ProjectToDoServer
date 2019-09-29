@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.projectTodo.dao.UserDao">
+    <resultMap id="userResultMap" type="com.projectTodo.entry.User">
+        <id column="id" jdbcType="INTEGER" property="id"></id>
+        <result column="nickName" jdbcType="VARCHAR" property="nickName"></result>
+        <result column="gender" jdbcType="INTEGER" property="gender"></result>
+        <result column="province" jdbcType="VARCHAR" property="province"></result>
+        <result column="city" jdbcType="VARCHAR" property="city"></result>
+        <result column="country" jdbcType="VARCHAR" property="country"></result>
+        <result column="signature" jdbcType="VARCHAR" property="signature"></result>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+    </resultMap>
+
+    <insert id="Insert" keyProperty="id" useGeneratedKeys="true" parameterType="com.projectTodo.entry.User">
+      INSERT INTO user(
+        nickName, gender, province, city, country, signature, create_time
+      ) VALUES (
+        #{nickName}, #{gender}, #{province}, #{city}, #{country}, #{signature}, #{createTime}
+      )
+    </insert>
+
+    <select id="getIdBySignature" parameterType="string" resultType="long">
+        SELECT id FROM user WHERE signature = #{signature} limit 1;
+    </select>
+</mapper>

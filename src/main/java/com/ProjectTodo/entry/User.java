@@ -8,6 +8,16 @@ import java.util.Date;
  * @since 1.0.0
  */
 public class User {
+    public User() {
+        setNickName("");
+        setGender(0);
+        setProvince("");
+        setCity("");
+        setCountry("");
+        setSignature("");
+        setCreateTime(new Date());
+    }
+
     private Long id;
     private String nickName;
     private Integer gender;

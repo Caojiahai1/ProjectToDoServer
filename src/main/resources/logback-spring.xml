@@ -35,6 +35,9 @@
 
     <!-- 下面配置一些第三方包的日志过滤级别，用于避免刷屏 -->
     <logger name="org" level="WARN"/>
+    <!--swagger springfox包下日志-->
+    <logger name="springfox" level="ERROR"/>
+    <logger name="com.zaxxer.hikari" level="ERROR"/>
 
     <!-- 日志输出级别 -->
     <root level="DEBUG">

@@ -1,8 +1,13 @@
 package com.projectTodo.controller;
 
+import com.projectTodo.entry.User;
+import com.projectTodo.service.UserService;
 import com.projectTodo.utils.Result;
-import com.projectTodo.utils.ResultGenerator;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import springfox.documentation.annotations.ApiIgnore;
@@ -14,11 +19,16 @@ import springfox.documentation.annotations.ApiIgnore;
  */
 @RestController
 @RequestMapping("/User")
-@ApiIgnore
+//@ApiIgnore
+@Api(tags = "用户管理", description = "用户管理")
 public class UserController {
 
-    @PostMapping("/add")
-    public Result addUser() {
-        return ResultGenerator.success();
+    @Autowired
+    private UserService userService;
+
+    @PostMapping("/onLine")
+    @ApiOperation(value = "用户上线(用户不存在，会新增用户，并记录上线日志)")
+    public Result userOnline(@RequestBody User user) {
+        return userService.userOnline(user);
     }
 }
