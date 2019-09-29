@@ -1,4 +1,4 @@
-package com.ProjectTodo;
+package com.projectTodo;
 
 import static org.junit.Assert.assertTrue;
 

@@ -1,8 +1,8 @@
-package com.ProjectTodo.controller;
+package com.projectTodo.controller;
 
-import com.ProjectTodo.entry.User;
-import com.ProjectTodo.service.UserService;
-import com.ProjectTodo.utils.Result;
+import com.projectTodo.entry.User;
+import com.projectTodo.service.UserService;
+import com.projectTodo.utils.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

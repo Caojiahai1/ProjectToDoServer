@@ -1,7 +1,7 @@
-package com.ProjectTodo.common.globalException;
+package com.projectTodo.common.globalException;
 
-import com.ProjectTodo.utils.Result;
-import com.ProjectTodo.utils.ResultGenerator;
+import com.projectTodo.utils.Result;
+import com.projectTodo.utils.ResultGenerator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ExceptionHandler;

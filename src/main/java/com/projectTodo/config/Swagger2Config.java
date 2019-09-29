@@ -1,4 +1,4 @@
-package com.ProjectTodo.config;
+package com.projectTodo.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -37,7 +37,7 @@ public class Swagger2Config {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.ProjectTodo.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.projectTodo.controller"))
                 .paths(PathSelectors.any())
                 .build()
                 .globalOperationParameters(pars)
@@ -47,9 +47,9 @@ public class Swagger2Config {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("ProjectTodo")
-                .description("ProjectTodo Api文档")
-                .license("ProjectTodo")
+                .title("projectTodo")
+                .description("projectTodo Api文档")
+                .license("projectTodo")
                 .version("1.0")
                 .build();
     }

@@ -1,6 +1,6 @@
-package com.ProjectTodo.config;
+package com.projectTodo.config;
 
-import com.ProjectTodo.common.interceptor.UserInfoInterceptor;
+import com.projectTodo.common.interceptor.UserInfoInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;

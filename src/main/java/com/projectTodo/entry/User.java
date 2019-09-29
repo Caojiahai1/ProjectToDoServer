@@ -1,4 +1,4 @@
-package com.ProjectTodo.entry;
+package com.projectTodo.entry;
 
 import java.util.Date;
 

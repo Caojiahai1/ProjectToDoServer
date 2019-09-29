@@ -1,4 +1,4 @@
-package com.ProjectTodo;
+package com.projectTodo;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  *
  */
 @SpringBootApplication
-@MapperScan("com.ProjectTodo.dao")
+@MapperScan("com.projectTodo.dao")
 @EnableTransactionManagement
 public class ProjectTodoApp
 {

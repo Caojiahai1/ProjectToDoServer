@@ -1,6 +1,6 @@
-package com.ProjectTodo.dao;
+package com.projectTodo.dao;
 
-import com.ProjectTodo.entry.User;
+import com.projectTodo.entry.User;
 import org.apache.ibatis.annotations.Param;
 
 /**
