@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.projectTodo.dao.UserTaskLogDao">
+    <resultMap id="userResultMap" type="com.projectTodo.entry.UserTaskLog">
+        <id column="id" jdbcType="BIGINT" property="id"></id>
+        <result column="task_id" jdbcType="BIGINT" property="taskId"></result>
+        <result column="user_id" jdbcType="BIGINT" property="userId"></result>
+        <result column="operation" jdbcType="VARCHAR" property="operation"></result>
+        <result column="description" jdbcType="VARCHAR" property="description"></result>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+    </resultMap>
+
+    <insert id="Insert" parameterType="com.projectTodo.entry.UserTaskLog">
+      INSERT INTO user_task_log(
+        id, task_id, user_id, operation, description, create_time
+      ) VALUES (
+        #{id}, #{taskId}, #{userId}, #{operation}, #{description}, #{createTime}
+      )
+    </insert>
+</mapper>

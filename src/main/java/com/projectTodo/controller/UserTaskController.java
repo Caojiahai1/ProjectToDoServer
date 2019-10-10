@@ -1,8 +1,9 @@
 package com.projectTodo.controller;
 
-import com.projectTodo.entry.User;
-import com.projectTodo.service.UserService;
+import com.projectTodo.entry.UserTask;
+import com.projectTodo.service.UserTaskService;
 import com.projectTodo.utils.Result;
+import com.projectTodo.utils.ResultGenerator;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,20 +14,20 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author Yan liang
- * @create 2019/9/28
+ * @create 2019/10/10
  * @since 1.0.0
  */
 @RestController
-@RequestMapping("/User")
-@Api(tags = "用户管理", description = "用户管理")
-public class UserController {
+@RequestMapping("/UserTask")
+@Api(tags = "用户任务")
+public class UserTaskController {
 
     @Autowired
-    private UserService userService;
+    private UserTaskService userTaskService;
 
-    @PostMapping("/onLine")
-    @ApiOperation(value = "用户上线(用户不存在，会新增用户，记录上线日志)")
-    public Result userOnline(@RequestBody User user) {
-        return userService.userOnline(user);
+    @PostMapping("/addTask")
+    @ApiOperation(value = "添加用户任务")
+    public Result addTask(@RequestBody UserTask userTask) {
+        return ResultGenerator.success();
     }
 }

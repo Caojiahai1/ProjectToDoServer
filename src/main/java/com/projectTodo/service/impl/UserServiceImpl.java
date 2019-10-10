@@ -5,6 +5,7 @@ import com.projectTodo.dao.UserLoginLogDao;
 import com.projectTodo.entry.User;
 import com.projectTodo.entry.UserLoginLog;
 import com.projectTodo.service.UserService;
+import com.projectTodo.utils.IdGenerator;
 import com.projectTodo.utils.Result;
 import com.projectTodo.utils.ResultGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,21 +30,22 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public Result userOnline(User user) {
-        if (user.getSignature() == null || "".equals(user.getSignature())) {
-            return ResultGenerator.fail("用户签名为空");
-        }
-        Long userId = userDao.getIdBySignature(user.getSignature());
+//        if (user.getSignature() == null || "".equals(user.getSignature())) {
+//            return ResultGenerator.fail("用户签名为空");
+//        }
+        Long userId = userDao.getIdByNickName(user.getNickName());
         if (userId ==null || userId == 0) {
+            user.setId(IdGenerator.nextId());
             userDao.Insert(user);
             userId = user.getId();
         }
         // 插入上线日志
-
         UserLoginLog userLoginLog = new UserLoginLog();
+        userLoginLog.setId(IdGenerator.nextId());
         userLoginLog.setUserId(userId);
         userLoginLog.setLoginIp("");
         userLoginLog.setLoginTime(new Date());
         userLoginLogDao.Insert(userLoginLog);
-        return ResultGenerator.success();
+        return ResultGenerator.success(userId);
     }
 }

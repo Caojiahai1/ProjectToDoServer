@@ -13,4 +13,6 @@ public interface UserDao {
     void Insert(User user);
 
     Long getIdBySignature(@Param("signature") String signature);
+
+    Long getIdByNickName(@Param("nickName") String nickName);
 }
